@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="../static/css/signUp.css">
+
+</head>
+<body>
+    <div class="header">
+        <div id="logo">
+            <img src="../static/images/catlogo.png" alt="logo" >
+        </div>
+        <div id="titleContent">
+            <h4 class="title">SWIFT Mobile Authentication</h4>
+            <!--<ul>
+                <li>Home</li>
+                <li>Action-Items</li>
+                <li>Logout</li>
+            </ul>-->
+        </div>
+    </div>
+   
+    <div id="box">
+        <div id="authimg">
+        <img id="authlogo" src="../static/images/phoneLogo.jpg" alt="authSymbol">
+    </div>
+        <form id="form" action=" {{ url_for('login') }} " method="POST" >
+            <div class="container">
+                <br>
+                <label for="email"><b>Email / CWS_ID</b></label>
+                <input type="text" placeholder="Enter Email / CWS_ID" name="email" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>      
+                <br>
+                <div class="msg"> <font color="red">{{ msg }}</font> </div>
+                <div class="clearfix">
+             <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="loginbtn">Login</button>
+          </div>
+          
+          <p id="newUserBtn"><b>New User? <a href="{{ url_for('signUp') }}">Sign Up!</a></b></p>
+        </div>
+      </form>
+    </div>
+
+</body>
+</html>

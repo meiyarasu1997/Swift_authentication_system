@@ -1,0 +1,59 @@
+:root{
+    --black : #000000;
+    --yellow : #FFC500;
+    
+
+}
+body{
+    height:100vh;
+    background-color: black;
+    background-image: url("../images/catbg7.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: left 10px bottom ;
+}
+
+#logo{
+    background-color: var(--black);
+    height: 70px;
+    
+}
+#titleContent{
+    font-family: helvetica;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--yellow);
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+#titleContent ul{
+    justify-content: flex-end;
+}
+img{
+    min-width:14%;
+    max-height:70px;
+    background-color : var(--black);
+}
+.title{
+    
+    color: var(--black);
+    margin-left: 15px;
+    
+}
+ul li{
+    font-weight: bold;
+    color: var(--black);
+    margin: 10px;
+    display: inline;
+    list-style: none;
+    text-decoration: underline;
+}
+
+.login-page{
+    margin-top:50px;
+    text-align:center;
+}
+.register-form{
+   padding:16px;
+}

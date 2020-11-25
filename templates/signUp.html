@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="../static/css/signUp.css">
+</head>
+<body>
+    <div class="header">
+        <div id="logo">
+            <img src="../static/images/catlogo.png" alt="logo" >
+        </div>
+        <div id="titleContent">
+            <h4 class="title">SWIFT Mobile Authentication</h4>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Login</a></li>
+                <!--<li>Action-Items</li>
+                <li>Logout</li>-->
+                
+            </ul>
+        </div>
+    </div>
+   
+    <div id="box">
+        <div id="authimg">
+        <img id="authlogo" src="../static/images/phoneLogo.jpg" alt="authSymbol">
+    </div>
+        <form id="form" action=" {{ url_for('newuser') }} " method="POST" >
+            <div class="container">
+                <label for="email"><b>Email / CWS_ID</b></label>
+                <input type="text" placeholder="Enter Email / CWS_ID" name="email" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>      
+                <label for="psw-repeat"><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="psw-repeat" required>
+                <div class="msg"> <font color="red">{{ msg }}</font> </div>
+                <div class="clearfix">
+             <button type="button" class="cancelbtn" onclick="window.location.href='{{ url_for('index') }}';">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+</body>
+</html>
