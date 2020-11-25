@@ -94,7 +94,7 @@ def login():
         sqliteConnection.commit()
         cursor.close()
         if (users_detail):
-            msg = "sucessfully logged in"
+            msg = "logged in sucessfully"
             return render_template('index.html', msg=msg)
         else:
             msg = "Incorrect username/password!"
