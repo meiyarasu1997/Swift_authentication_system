@@ -30,7 +30,7 @@
         <form id="form" action=" {{ url_for('newuser') }} " method="POST" >
             <div class="container">
                 <label for="email"><b>Email / CWS_ID</b></label>
-                <input type="text" placeholder="Enter Email / CWS_ID" name="email" required>
+                <input type="text" placeholder="Enter Email / CWS_ID" value="{{email}}" name="email" required>
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>      
                 <label for="psw-repeat"><b>Confirm Password</b></label>
