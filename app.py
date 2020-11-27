@@ -47,24 +47,16 @@ def signUp():
 def newuser():
     if request.method == 'POST':
       try:
-        user_name= request.form['email']
         password = request.form['psw']
         confirm_password = request.form['psw-repeat']
-        first_Name = user_name
-        last_Name = user_name
-        cws_id = user_name
-        email_id = user_name
-        access_level = user_name
-        password = password
+        first_Name = request.form['first_Name']
+        last_Name = request.form['last_Name']
+        cws_id = request.form['cws_id']
+        email_id = request.form['email']
+        access_level = request.form['access']
         print('password')
-
-        Signup_list=[]
-        Signup_list
-
-
         selected_user = db.session.query(User_details).filter(User_details.CWS_id == cws_id).first()
-        print("selected user")
-
+        print(selected_user)
         if (selected_user):
             msg = "Please use a different username"
             return render_template('index.html', msg=msg)
@@ -73,10 +65,11 @@ def newuser():
             db.session.add(data)
             db.session.commit()
             msg = "Sign up successfull"
-            return render_template('index.html',msg=msg,email=user_name)
+            return render_template('index.html',msg=msg)
         else:
             msg='Password mismatch'
-            return render_template('signUp.html', msg=msg)
+            return render_template('signUp.html', msg=msg,first_Name=first_Name,last_Name=last_Name
+                                   ,cws_id=cws_id ,email_id=email_id)
 
       except Exception as error:
           return error
@@ -93,6 +86,10 @@ def login():
         selected_user = db.session.query(User_details).filter(User_details.CWS_id == user_name).first()
         if(not selected_user):
             selected_user = db.session.query(User_details).filter(User_details.Email_id == user_name).first()
+            if(not selected_user):
+                msg = "Incorrect username/password!"
+                return render_template('index.html', msg=msg)
+
         if (selected_user.Password==password):
             msg = "sucessfully logged in"
             return render_template('index.html', msg=msg)

@@ -29,8 +29,27 @@
     </div>
         <form id="form" action=" {{ url_for('newuser') }} " method="POST" >
             <div class="container">
-                <label for="email"><b>Email / CWS_ID</b></label>
-                <input type="text" placeholder="Enter Email / CWS_ID" value="{{email}}" name="email" required>
+                <label for="email"><b>First Name</b></label>
+                <input type="text" placeholder="Enter First Name" value="{{ first_Name }}" name="first_Name" required>
+                <label for="email"><b>Last Name</b></label>
+                <input type="text" placeholder="Enter Last Name" value="{{ last_Name }}" name="last_Name" required>
+                <label for="email"><b>CWS ID</b></label>
+                <input type="text" placeholder="Enter Email / CWS_ID" value="{{ cws_id }}" name="cws_id" required>
+                <label for="email"><b>Email ID</b></label>
+                <input type="text" placeholder="Enter Email / CWS_ID" value="{{ email_id }}" name="email" required>
+                <label>access_level</label>
+                  <input type = "radio"
+                 name = "access"
+                 id = "Employee"
+                 value = "Employee"
+                 checked = "checked" />
+                <label for = "Employee">Employee</label>
+          <input type = "radio"
+                 name = "access"
+                 id = "Supervisor"
+                 value = "Supervisor" />
+          <label for = "Supervisor">Supervisor</label>
+                <br>
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>      
                 <label for="psw-repeat"><b>Confirm Password</b></label>
